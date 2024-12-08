@@ -1,0 +1,11 @@
+`TSet<UActorComponent*> OwnedComponents` 保存着这个Actor所拥有的所有Component
+
+`TArray<UActorComponent*> InstanceComponents` 保存着实例化的Components
+
+从游戏逻辑的实现来说，UE也是不推荐把游戏逻辑写在Component里面
+
+UE里是通过Child:AttachToActor或Child:AttachToComponent来创建父子连接的。
+
+Actor父子之间的“关系”其实隐含了许多数据，而这些数据都是在Component上提供的。Actor其实更像是一个容器，只提供了基本的创建销毁，网络复制，事件触发等一些逻辑性的功能，而把父子的关系维护都交给了具体的Component，所以更准确的说，其实是不同Actor的SceneComponent之间有父子关系，而Actor本身其实并不太关心。
+
+Actor中的TArray<AActor*> Children数组跟AttachToActor和AttachToComponent并没有关系，这两个方法只是确定了Actor的SceneComponent之间的父子关系，是通过SceneComponent中的AttachChildren数组存储的，Actor中的Children数组是通过SetOwner方法修改的
