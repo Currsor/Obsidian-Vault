@@ -49,7 +49,7 @@ $$\text{R(n, }\alpha\text{)}=\cos(\alpha)\mathbf{I}+(1-\cos(\alpha))\mathbf{n}\m
 
 $$M_{view}=R_{view}T_{view}$$
 $$T_{view}=\begin{bmatrix}1&0&0&-x_{e}\\0&1&0&-y_{e}\\0&0&1&-z_{e}\\0&0&0&1\end{bmatrix}$$
-Rotate $g$ to $-z$ , $t$ to $Y$ , $(g\times{t})$ to $x$
+Rotate $g$ to $-Z$ , $t$ to $Y$ , $(g\times{t})$ to $X$
 Consider its inverse rotation: $x$ to $(g \times t)$, $y$ to $t$, $z$ to $-g$ 
 $$
 R_{view}^{-1} = \begin{bmatrix}
