@@ -1,7 +1,4 @@
----
-banner: "![[gabriel-loo-carre-windmill.jpg]]"
-banner_y: 0.90332
----
+
 在进行了上节课的操作之后，所有物体都处在了$[-1,1]^3$的立方体中，接下来就要把他画在屏幕上，这一步就叫做光栅化
 
 在做透视投影时候需要将一个四棱梯挤压成正方体，就需要先定义一个视锥（四棱锥）
@@ -9,9 +6,9 @@ banner_y: 0.90332
 # 定义视锥
 1. `field-of-view`(`FOV`可视角度)
 2. `aspect ratio`(宽高比)
-![[Pasted image 20241207153942.png]]
+![](IMG/Pasted%20image%2020241207153942.png)
 
-![[Pasted image 20241207154416.png]]
+![](IMG/Pasted%20image%2020241207154416.png)
 $$\begin{aligned}&\operatorname*tan\frac{fovY}{2}=\frac{t}{|n|}\\ &aspect=\frac{r}{t}\end{aligned}$$
 # 光栅化
 - 暂时忽略z
@@ -31,7 +28,7 @@ $$M_{viewport} = \left( \begin{array}{cccc} \frac{width}{2} & 0 & 0 & \frac{widt
 采样就是把一个函数离散化的过程
 
 给定一个三角形，在像素的中心进行采样，来判断中心是否落在三角形内
-![[Pasted image 20241207155607.png]]
+![](IMG/Pasted%20image%2020241207155607.png)
 逐像素遍历，判断该像素中心是否在三角形内部，输出到屏幕显示
 
 但是遍历所有像素开销太大，如下图中白色那一列的像素根本没有碰到三角形，所以只要遍历蓝色区域就可以了
@@ -39,8 +36,8 @@ $$M_{viewport} = \left( \begin{array}{cccc} \frac{width}{2} & 0 & 0 & \frac{widt
 我们知道三角形三个顶点的坐标，有了$Xmin，Ymin，Xmax，Ymax$就可以得到蓝色的区域
 
 蓝色区域就叫做**包围盒**（轴向包围盒/BoundingBox/**AABB**）
-![[Pasted image 20241207155950.png]]
+![](IMG/Pasted%20image%2020241207155950.png)
 采样完成后，因为每个像素都是最小单位，像素内的颜色必须一样，所以我们会得到这样一副图
-![[Pasted image 20241207160104.png]]
+![](IMG/Pasted%20image%2020241207160104.png)
 ___
-# [[Lecture 6|Next]]
+# [[Lecture 6|Next)

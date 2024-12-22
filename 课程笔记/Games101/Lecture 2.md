@@ -1,7 +1,3 @@
----
-banner: "![[lucas-staniec-24-10-24-dune-prayerlow.jpg]]"
-banner_y: 0.71
----
 # 向量的点乘
 可用于判定向量夹角大小A
 若大于90度则为负

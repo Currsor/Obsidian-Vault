@@ -1,8 +1,6 @@
----
-banner: "![[StockSnap_FWOJYORMPR.jpg]]"
----
+
 # 3D旋转
-![[Pasted image 20241206182558.png]]
+![](IMG/Pasted%20image%2020241206182558.png)
 Rotation around x-, y-, orz-axis
 $$R_x（a）=\begin{pmatrix}1&0&0&0\\0&cosα&-sinα&0\\0&sinα&cosα&0\\0&0&0&1\end{pmatrix}$$
 $$R_y（a）=\begin{pmatrix}cosα&0&sinα&0\\0&1&0&0\\-sinα&0&cosα&0\\0&0&0&1\end{pmatrix}$$
@@ -24,7 +22,7 @@ $$\text{R(n, }\alpha\text{)}=\cos(\alpha)\mathbf{I}+(1-\cos(\alpha))\mathbf{n}\m
 - $\cos(\alpha)\mathbf{I}$：这是旋转矩阵的第一部分，其中 $\mathbf{I}$ 是单位矩阵，$\cos(\alpha)$ 是旋转角度 $\alpha$ 的余弦值。这一部分表示旋转过程中保持不变的分量。
 - $(1-\cos(\alpha))\mathbf{n}\mathbf{n}^{T}$：这是旋转矩阵的第二部分，其中 $\mathbf{n}$ 是旋转轴的向量，$\mathbf{n}^{T}$ 是 $\mathbf{n}$ 的转置。这一部分表示旋转导致的向量在旋转轴上的投影的变化。
 - $\sin(\alpha)$：这是旋转角度 $\alpha$ 的正弦值，它出现在第三部分，表示旋转导致的向量在垂直于旋转轴的平面上的分量。
-- $\begin{pmatrix}0&-n_{z}&n_{y}\\ n_{z}&0&-n_{x}\\ -n_{y}&n_{x}&0\end{pmatrix}$：这是一个[[Lecture 2#向量的叉乘|反对称矩阵]]，由旋转轴向量 $\mathbf{n}$ 的分量 $n_{x}$, $n_{y}$, $n_{z}$ 构成。这个矩阵与 $\sin(\alpha)$ 相乘，表示向量在垂直于旋转轴的平面上的旋转。
+- $\begin{pmatrix}0&-n_{z}&n_{y}\\ n_{z}&0&-n_{x}\\ -n_{y}&n_{x}&0\end{pmatrix}$：这是一个[[Lecture 2#向量的叉乘|反对称矩阵)，由旋转轴向量 $\mathbf{n}$ 的分量 $n_{x}$, $n_{y}$, $n_{z}$ 构成。这个矩阵与 $\sin(\alpha)$ 相乘，表示向量在垂直于旋转轴的平面上的旋转。
 # Viewing transformation
 在现实生活中如何照一张照片？
 1. 找个好地方摆pose（Model变换）
@@ -95,7 +93,7 @@ $$M_{ortho}=\begin{bmatrix}\frac{2}{r-l}&0&0&0\\0&\frac{2}{t-b}&0&0\\0&0&\frac{2
 变成Cuboid的样子，然后做一次正交投影
 
 ### 实现
-![[Pasted image 20241206193016.png]]
+![](IMG/Pasted%20image%2020241206193016.png)
 - 对于除近平面外的任意一个点，通过挤压后该点的高度 $y$ 要变成和近平面一样的 $y’$
 - 从侧面看Frustum的话，如下图，可以形成两个相似三角形，即可得出$y’=(n/z)y$
 - 同理$x’=(n/z)x$
@@ -124,4 +122,4 @@ $$\begin{pmatrix}0&0&A&B\end{pmatrix}\begin{pmatrix}x\\y\\n\\1\end{pmatrix}=n^{2
 $$M_{persp\rightarrow ortho}=\begin{pmatrix}n&0&0&0\\0&n&0&0\\0&0&{n+f}&{-nf}\\0&0&1&0\end{pmatrix}$$
 $$M_{persp}=M_{ortho}M_{persp\rightarrow ortho}$$
 ___
-# [[Lecture 5|Next]]
+# [[Lecture 5|Next)
