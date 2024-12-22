@@ -16,4 +16,4 @@ Translation
 	$$\mathbf{T}\left(t_{x}, t_{y}\right)=\left(\begin{array}{ccc}1&0&t_{x}\\0&1&t_{y}\\0&0&1\end{array}\right)$$
 先旋转在平移写作 （T·R·向量） 从右往左写
 ___
-# [[Lecture 4|Next)
+# [Lecture 4](Lecture%204.md)

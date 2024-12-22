@@ -115,4 +115,4 @@ MSAA（Multisample Anti-Aliasing）多重采样抗锯齿
 
 MSAA解决的其实是对信号的模糊操作
 ___
-# [[Lecture 7|Next)
+# [Lecture 7](Lecture%207.md)

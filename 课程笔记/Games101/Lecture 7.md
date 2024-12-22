@@ -61,4 +61,4 @@ $$L_d = k_d \left(\frac{I}{r^2}\right)\max(0,\mathbf{n} \cdot \mathbf{l})$$
 4. $r^2$: 这是光源到物体表面的距离平方（Distance from the light source to the surface squared）。随着距离的增加，光会扩散，因此光强与距离的平方成反比。
 5. $\max(0, \mathbf{n} \cdot \mathbf{l})$: 这一部分称为漫反射项（Diffuse Term），它取决于入射光的夹角。这里$\mathbf{n}$是物体的表面法线向量（Surface Normal Vector），而$\mathbf{l}$是从物体指向光源的单位向量（Unit Vector pointing towards the light source）。点积$\mathbf{n} \cdot \mathbf{l}$表示这两个向量的夹角的余弦值。当两个向量垂直时，点积为0；当它们平行时，点积为1。由于我们只关心正向照明的情况，所以取最大值为0或正的点积结果。
 ___
-# [](IMG/Pasted%20image%20Lecture 8|Next)
+# [Lecture 8](Lecture%208.md)

@@ -122,4 +122,4 @@ $$\begin{pmatrix}0&0&A&B\end{pmatrix}\begin{pmatrix}x\\y\\n\\1\end{pmatrix}=n^{2
 $$M_{persp\rightarrow ortho}=\begin{pmatrix}n&0&0&0\\0&n&0&0\\0&0&{n+f}&{-nf}\\0&0&1&0\end{pmatrix}$$
 $$M_{persp}=M_{ortho}M_{persp\rightarrow ortho}$$
 ___
-# [[Lecture 5|Next)
+# [Lecture 5](Lecture%205.md)

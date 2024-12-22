@@ -32,4 +32,4 @@ $$A^*=\left(\begin{array}{ccc}0&-z_{a}&y_{a}\\z_{a}&0&-x_{a}\\-y_{a}&x_{a}&0\end
 （Lecture4的罗德里格斯旋转公式会用到这个性质）
 ___
 
-# [[Lecture 3| Next]]
+# [Lecture 3](Lecture%203.md)

@@ -40,4 +40,4 @@ $$M_{viewport} = \left( \begin{array}{cccc} \frac{width}{2} & 0 & 0 & \frac{widt
 采样完成后，因为每个像素都是最小单位，像素内的颜色必须一样，所以我们会得到这样一副图
 ![](IMG/Pasted%20image%2020241207160104.png)
 ___
-# [[Lecture 6|Next)
+# [Lecture 6](Lecture%206.md)

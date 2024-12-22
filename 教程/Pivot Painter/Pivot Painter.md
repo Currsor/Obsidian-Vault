@@ -17,11 +17,11 @@ ___
 UE的PivotPainter现在有两版，区别在于2.0版使用贴图来存储信息，而1.0版使用顶点信息包括额外的UV通道。
 
 UE中提供了两个版本各自的材质函数
-![[Pasted image 20241014205440.png]]
+![](IMG/Pasted%20image%2020241014205440.png)
 ___
 ## 1.0的数据
 我使用的是Houdini，所以这边介绍的是Houdini的节点
-![[Pasted image 20241014205601.png]]
+![](IMG/Pasted%20image%2020241014205601.png)
 > Important pivot attributes are: N and name for PP1. N and hierarchy for PP2.
 >Important geometry attributes are: uv and name for PP1. uv and hierarchy for PP2.
 >
@@ -32,22 +32,22 @@ ___
 > 具体需要输入什么需要深入节点研究（我没这个能力，没法告诉你们了）
 
 细节模板中的Mode可以调整PivotalPainter的版本
-![[Pasted image 20241014210347.png]]
+![](IMG/Pasted%20image%2020241014210347.png)
 ___
 在1.0版本中你能看到其实都是与UE中`PivotPainter_PerObjectData`一一对应的
-![[Pasted image 20241014210451.png]]
+![](IMG/Pasted%20image%2020241014210451.png)
 > ==这里可以观察到`Forward Axis`使用的是顶点色传递，所以导入时需将顶点色导入设置为替换==
 > ___
-![[Pasted image 20241014210610.png]]
+![](IMG/Pasted%20image%2020241014210610.png)
 与 `Per Object` 相对的是 `Hierarchical`：
-![[Pasted image 20241014211005.png]]
+![](IMG/Pasted%20image%2020241014211005.png)
 二者应该是互斥的(我不很清楚，建议进节点研究)
 
 ## 2.0的数据
-![[Pasted image 20241014205635.png]]
+![](IMG/Pasted%20image%2020241014205635.png)
 切换至2.0时节点输出的是两张贴图
 RGB，A分别代表了些数据
-![[Pasted image 20241014211255.png]]
+![](IMG/Pasted%20image%2020241014211255.png)
 贴图有 `16-bit` 和 `8-bit` 之分，前者将会存储为[EXR](https://www.openexr.com/)格式，后者则是常规的TGA格式。
 两个也会影响A通道的选择
 
@@ -59,11 +59,11 @@ ___
 ## 旋转
 ### Houdini
 首先我们来一个简单的三块砖
-![[Pasted image 20241014212615.png]]
-![[Pasted image 20241014213737.png]]
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_8be686c6-891a-cf56-3cd0-7ae67f5898eb.webp]]
+![](IMG/Pasted%20image%2020241014212615.png)
+![](IMG/Pasted%20image%2020241014213737.png)
+![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_8be686c6-891a-cf56-3cd0-7ae67f5898eb.webp)
 
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_b4cff944-3b7d-9edb-c1cf-dac526ad4a33.webp]]
+![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_b4cff944-3b7d-9edb-c1cf-dac526ad4a33.webp)
 >左の入力：描画モデル（ポリゴンメッシュ） 
 >左侧输入：绘制模型（多边形网格）  
 
@@ -73,9 +73,9 @@ ___
 多边形网格与哪个枢轴相关联？
 为确定这一点，我们准备了名为 @hierarchy 的属性。
 ==需要在网格和枢轴双方进行设置。==
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_1c699992-ca7e-1fb6-1240-99f01fbbfdd6.webp]]
+![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_1c699992-ca7e-1fb6-1240-99f01fbbfdd6.webp)
 Pivot Painter SOP 中设置的 UV 使用的是==第二个 UV==。在调用Texture时需使用第二个UV
-![[Pasted image 20241014215551.png]]
+![](IMG/Pasted%20image%2020241014215551.png)
 「Pivot Position」在 UE 中用于“回转的中心位置”（使用@P 的值）
 「Selection Order」用于调整旋转时机，作为数值（使用点数编号）
 「XVector」用于 UE 中的“旋转轴方向”（使用@N 的值）
@@ -91,24 +91,24 @@ Pivot Painter SOP 中设置的 UV 使用的是==第二个 UV==。在调用Textur
 - 8bit画像の設定 8 位图像设置  
 	圧縮設定 : VectorDisplacementmap
 #### 总览
-![[Pasted image 20241014215803.png]]
+![](IMG/Pasted%20image%2020241014215803.png)
 #### GetData
 如前文所说使用快捷键按住U后左键点出UV节点，使用第二张UV调用贴图（UE中UV是从0开始的）
-![[Pasted image 20241014220144.png]]
+![](IMG/Pasted%20image%2020241014220144.png)
 #### Rotate
 介绍两个两个节点`RotateAboutAxis`和`FixRotateAboutAxisNormals`
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_ddedff77-32b8-1729-f6e5-164734ffe933.webp]]
+![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_ddedff77-32b8-1729-f6e5-164734ffe933.webp)
 	『回転軸の向き』    『旋转轴的朝向』
 	『回転角度』           『旋转角度』
 	『ピボットの位置』『枢轴位置』
 这里使用`FixRotateAboutAxisNormals`是因为使用`RotateAboutAxis`旋转不会旋转法线，这个函数是用来旋转法线的
 
-![[Pasted image 20241014220651.png]]
+![](IMG/Pasted%20image%2020241014220651.png)
 结尾那个节点是重命名节点（不知道叫啥，我自己给他取的）输入`name`就能搜出来
-![[Pasted image 20241014220847.png]]
-![[Pasted image 20241014220916.png]]
+![](IMG/Pasted%20image%2020241014220847.png)
+![](IMG/Pasted%20image%2020241014220916.png)
 #### 结果
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_128ff1f3-e188-377c-8041-0b248796cda7.webp]]
+![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_128ff1f3-e188-377c-8041-0b248796cda7.webp)
 # 参考文章
 [Pivot Painter の解説 AdventCalendar2022 - Qiita](https://qiita.com/Muteriku/items/857e02ac746b091a73f3)
 
