@@ -108,7 +108,7 @@ Pivot Painter SOP 中设置的 UV 使用的是==第二个 UV==。在调用Textur
 ![](IMG/Pasted%20image%2020241014220847.png)
 ![](IMG/Pasted%20image%2020241014220916.png)
 #### 结果
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_128ff1f3-e188-377c-8041-0b248796cda7.webp)
+![](IMG/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_128ff1f3-e188-377c-8041-0b248796cda7.webp)
 # 参考文章
 [Pivot Painter の解説 AdventCalendar2022 - Qiita](https://qiita.com/Muteriku/items/857e02ac746b091a73f3)
 
