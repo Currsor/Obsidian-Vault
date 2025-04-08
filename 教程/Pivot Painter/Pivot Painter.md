@@ -61,9 +61,9 @@ ___
 首先我们来一个简单的三块砖
 ![](IMG/Pasted%20image%2020241014212615.png)
 ![](IMG/Pasted%20image%2020241014213737.png)
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_8be686c6-891a-cf56-3cd0-7ae67f5898eb.webp)
+![](https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_8be686c6-891a-cf56-3cd0-7ae67f5898eb.webp)
 
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_b4cff944-3b7d-9edb-c1cf-dac526ad4a33.webp)
+![](https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_b4cff944-3b7d-9edb-c1cf-dac526ad4a33.webp)
 >左の入力：描画モデル（ポリゴンメッシュ） 
 >左侧输入：绘制模型（多边形网格）  
 
@@ -73,7 +73,7 @@ ___
 多边形网格与哪个枢轴相关联？
 为确定这一点，我们准备了名为 @hierarchy 的属性。
 ==需要在网格和枢轴双方进行设置。==
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_1c699992-ca7e-1fb6-1240-99f01fbbfdd6.webp)
+![](https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_1c699992-ca7e-1fb6-1240-99f01fbbfdd6.webp)
 Pivot Painter SOP 中设置的 UV 使用的是==第二个 UV==。在调用Texture时需使用第二个UV
 ![](IMG/Pasted%20image%2020241014215551.png)
 「Pivot Position」在 UE 中用于“回转的中心位置”（使用@P 的值）
@@ -97,7 +97,7 @@ Pivot Painter SOP 中设置的 UV 使用的是==第二个 UV==。在调用Textur
 ![](IMG/Pasted%20image%2020241014220144.png)
 #### Rotate
 介绍两个两个节点`RotateAboutAxis`和`FixRotateAboutAxisNormals`
-![[https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_ddedff77-32b8-1729-f6e5-164734ffe933.webp)
+![](https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_314518_ddedff77-32b8-1729-f6e5-164734ffe933.webp)
 	『回転軸の向き』    『旋转轴的朝向』
 	『回転角度』           『旋转角度』
 	『ピボットの位置』『枢轴位置』
